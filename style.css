@@ -1,17 +1,49 @@
+/* reset */
 body, h1 {
     margin: 0;
+    padding: 0;
 }
 
+h1 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* layout */
+.wrap {
+    display: flex;
+}
+
+
+/* design */
+
+/* header */
 .header {
-    height: 40vw;
+    height: 30vw;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-image: url(./images/cover3.png);
+    background-image: url(./images/cover1.png);
     background-size: cover;
     color: white;
+    position: relative;
 }
 
 .header::before {
-
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background:-webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%)
 }
+
+.header-title {
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5em;
+    font-size: 3vw;
+}
+/* aside */
