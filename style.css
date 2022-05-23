@@ -1,21 +1,43 @@
 /* reset */
-body, h1 {
+body, h1, h2, h3, ul, p {
     margin: 0;
     padding: 0;
 }
 
-h1 {
+a, h1, h2, h3 {
     font-size: inherit;
     font-weight: inherit;
 }
 
-/* layout */
-.wrap {
-    display: flex;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
+li {
+    list-style: none;
+}
+/* layout */
+.wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.wrap-inside {
+    padding: 80px 20px 0;
+    display: flex;
+    align-items: flex-start;
+}
+/* 뭔가 wrap이 많은 기능을 담당하는것 같은데 나누자니 마크업이 길어져서 고민했습니다ㅠㅠ 
+결국 footer랑 같이 묶으려고 나눴습니다*/
 
 /* design */
+body {
+    background-color: black;
+    color: #888;
+    font-family: 'Montserrat', sans-serif;
+    word-break: keep-all;
+}
 
 /* header */
 .header {
@@ -44,6 +66,119 @@ h1 {
     position: relative;
     z-index: 1;
     letter-spacing: 0.5em;
-    font-size: 3vw;
+    font-size: 2vw;
 }
 /* aside */
+.aside {
+    width: 200px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.aside-logo {
+    display: block;
+    width: 200px;
+    height: 220px;
+    background-image: url(./images/logo.png);
+    background-size: cover;
+}
+
+.aside-link {
+    display: block;
+    padding: 4px 18px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* main */
+.main {
+    flex-grow: 1;
+}
+
+.section {
+    margin-bottom: 50px;
+    min-height: 100vh;
+}
+
+.section .title {
+    padding: 20px 0;
+    font-size: 2rem;
+    color: white;
+}
+
+.section .wrap-inside {
+    display: flex;
+    gap: 20px;
+}
+
+.section .subtitle {
+    color: salmon;
+    padding: 20px 0;
+}
+
+.section .cover {
+    width: 320px;
+}
+
+/* gird */
+.grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax( 200px, 1fr) );
+    gap: 20px;
+}
+
+.card {
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-cover {
+    padding-top: 70%;
+    position: relative;
+    border-bottom: 5px solid;
+}
+
+.card-cover img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-details {
+    padding: 10px;
+}
+
+.subtitle.orange, .orange {
+    color: orange;
+}
+
+.subtitle.orange-red, .orange-red {
+    color: #e4512e;
+}
+
+.subtitle.puple, .puple {
+    color: #8711d2;
+}
+
+.subtitle.gray, .gray {
+    color: #ddd;
+}
+
+.subtitle.blue, .blue {
+    color: #336699;
+}
+
+.subtitle.green, .green {
+    color: #75d211;
+}
+
+/* footer */
+.footer {
+    border-top: 1px solid #555;
+    padding: 30px 0;
+}
